@@ -27,8 +27,8 @@ public class SpringSecurityConfig {
         return http.authorizeHttpRequests(auth->{
                 auth.requestMatchers("/admin").hasRole("ADMIN");
                 auth.requestMatchers("/user").hasRole("USER");
-                auth.anyRequest().authenticated();
-        }).formLogin(Customizer.withDefaults())
+                //auth.anyRequest().authenticated();
+        }).formLogin(Customizer.withDefaults()).oauth2Login(Customizer.withDefaults())
                 .build();
     }
 
