@@ -34,6 +34,7 @@ public class LoginController {
         StringBuffer userNameInfo = new StringBuffer();
         UsernamePasswordAuthenticationToken token = (UsernamePasswordAuthenticationToken)user;
         if(token.isAuthenticated()){
+            //
             User u = (User)token.getPrincipal();
             userNameInfo.append( "Welcome, " + u.getUsername() );
         }else{
